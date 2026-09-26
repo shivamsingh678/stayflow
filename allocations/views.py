@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Allocation
+from .serializers import AllocationSerializer
 
-# Create your views here.
+class AllocationViewSet(viewsets.ModelViewSet):
+    queryset = Allocation.objects.all()
+    serializer_class = AllocationSerializer
